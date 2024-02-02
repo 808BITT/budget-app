@@ -43,7 +43,9 @@ const App = () => {
                 </div>
             </div>
             <div id="app-footer">
-                <p>Look the same but table has 2 extra indents.. Gross</p>
+                <p>They look the same but table has 2 extra levels of indent.. 🤢</p>
+
+                <p>Looks like I will be using 💪 Rows for this.! 😊</p>
             </div>
         </div>
 
