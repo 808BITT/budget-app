@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+    @apply bg-slate-700;
+    @apply text-white;
+    @apply min-h-screen;
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply justify-center;
+}
+
+#title {
+    @apply text-4xl;
+    @apply font-bold;
+    @apply mb-2;
+}
+
+#subtitle {
+    @apply text-lg;
+    @apply font-bold;
+}
