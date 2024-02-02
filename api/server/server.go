@@ -21,7 +21,7 @@ type ApiServer struct {
 func NewApiServer(port, assets string) ApiServer {
 	return ApiServer{
 		Server: &http.Server{
-			Handler: NewHandler(),
+			Handler: NewRouteHandler(),
 			Addr:    port,
 		},
 		AssetPath: assets,
@@ -29,11 +29,11 @@ func NewApiServer(port, assets string) ApiServer {
 
 }
 
-func NewHandler() http.Handler {
+func NewRouteHandler() http.Handler {
 	r := mux.NewRouter()
 	r.HandleFunc("/", route.WebApp)
-	r.HandleFunc("/assets/{rest:.*}", route.ServeAsset)
-	r.HandleFunc("/api/v1/{rest:.*}", route.Router)
+	r.HandleFunc("/assets/{rest:.*}", route.WebAssets)
+	r.HandleFunc("/api/v1/{rest:.*}", route.RouterV1)
 
 	handler := cors.New(cors.Options{
 		AllowedOrigins: []string{"*"},

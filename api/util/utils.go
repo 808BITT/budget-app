@@ -26,6 +26,6 @@ func NewStopListener() chan os.Signal {
 	return signalChan
 }
 
-func AssetPath() string {
+func WebAssetPath() string {
 	return `..\dist\src`
 }

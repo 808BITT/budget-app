@@ -8,8 +8,7 @@ import (
 )
 
 func main() {
-	// specify a different port by passing it as an argument at runtime
-	srv := server.NewApiServer(util.ReadPortArg(), util.AssetPath())
+	srv := server.NewApiServer(util.ReadPortArg(), util.WebAssetPath())
 	wg := server.Start(srv)
 
 	stopChan := util.NewStopListener()
