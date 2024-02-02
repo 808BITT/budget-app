@@ -26,6 +26,11 @@ func NewStopListener() chan os.Signal {
 	return signalChan
 }
 
+func ListenForShutdown() {
+	stopChan := NewStopListener()
+	<-stopChan
+}
+
 func WebAssetPath() string {
 	return `..\dist\src`
 }

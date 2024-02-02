@@ -4,18 +4,19 @@ import (
 	"api/server"
 	"api/util"
 	"log"
-	"os"
 )
 
 func main() {
-	srv := server.NewApiServer(util.ReadPortArg(), util.WebAssetPath())
-	wg := server.Start(srv)
+	log.Println("Starting server")
 
-	stopChan := util.NewStopListener()
-	<-stopChan
-	server.Shutdown(srv)
-	wg.Wait()
+	port := util.ReadPortArg()
+	path := util.WebAssetPath()
+	srvr := server.NewApiServer(port, path)
+	tgrp := server.Start(srvr)
+
+	util.ListenForShutdown()
+	server.Shutdown(srvr)
+	tgrp.Wait()
 
 	log.Println("Server exited")
-	os.Exit(0)
 }

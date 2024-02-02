@@ -1,7 +1,7 @@
-package route
+package router
 
 import (
-	"api/route/health"
+	"api/router/health"
 	"api/util"
 	"log"
 	"net/http"

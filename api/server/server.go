@@ -1,7 +1,7 @@
 package server
 
 import (
-	"api/route"
+	"api/router"
 	"context"
 	"errors"
 	"log"
@@ -31,9 +31,9 @@ func NewApiServer(port, assets string) ApiServer {
 
 func NewRouteHandler() http.Handler {
 	r := mux.NewRouter()
-	r.HandleFunc("/", route.WebApp)
-	r.HandleFunc("/assets/{rest:.*}", route.WebAssets)
-	r.HandleFunc("/api/v1/{rest:.*}", route.RouterV1)
+	r.HandleFunc("/", router.WebApp)
+	r.HandleFunc("/assets/{rest:.*}", router.WebAssets)
+	r.HandleFunc("/api/v1/{rest:.*}", router.RouterV1)
 
 	handler := cors.New(cors.Options{
 		AllowedOrigins: []string{"*"},
@@ -62,4 +62,5 @@ func Shutdown(api ApiServer) {
 	if err := api.Server.Shutdown(ctx); err != nil {
 		log.Fatal("Server Shutdown Failed:", err)
 	}
+
 }
