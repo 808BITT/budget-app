@@ -12,13 +12,14 @@
     @apply justify-center;
 }
 
-#title {
+#app-header {
     @apply text-4xl;
     @apply font-bold;
-    @apply mb-2;
+    @apply mb-4;
 }
 
-#subtitle {
-    @apply text-lg;
-    @apply font-bold;
+#app-body {
+    @apply text-xl;
+    @apply text-center;
+    @apply mb-4;
 }
