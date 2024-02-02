@@ -15,11 +15,27 @@
 #app-header {
     @apply text-4xl;
     @apply font-bold;
-    @apply mb-4;
+    @apply my-8;
 }
 
 #app-body {
     @apply text-xl;
     @apply text-center;
-    @apply mb-4;
+    @apply my-8;
 }
+
+#app-table {
+    @apply my-8;
+}
+
+#app-flex {
+    @apply my-8;
+}
+
+
+#app-footer {
+    @apply text-sm;
+    @apply text-center;
+    @apply my-20;
+}
+

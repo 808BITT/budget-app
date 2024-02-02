@@ -11,8 +11,8 @@ const App = () => {
                 <p>That is the question.</p>
             </div>
             <br />
-            <h1>Table</h1>
             <div id="app-table">
+                <h1 class="text-center">Table</h1>
                 <table>
                     <tbody>
                         <tr class="flex my-4 p-8 bg-slate-800">
@@ -29,8 +29,8 @@ const App = () => {
                 </table>
             </div>
             <br />
-            <h1>Flex Rows</h1>
             <div id="app-flex" class="flex-row">
+                <h1 class="text-center">Flex Rows</h1>
                 <div class="flex my-4 p-8 bg-slate-800">
                     <div class="mx-8 px-8">Row 1, Column 1</div>
                     <div class="mx-8 px-8">Row 1, Column 2</div>
